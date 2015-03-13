@@ -1,4 +1,4 @@
-angular.module('fluro.config').run(['$templateCache', function($templateCache) {
+angular.module('fluro.ui').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('fluro/ui/columns.html',

@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             }
         },
         ngtemplates: {
-            'fluro.config': {
+            'fluro.ui': {
                 cwd: './lib/html',
                 src: 'fluro/**/*.html',
                 dest: 'dist/fluro-config-templates.js',
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
                     'dist/fluro-config.js',
                     'dist/fluro-config-templates.js'
                 ],
-                dest: 'dist/fluro.config.min.js'
+                dest: 'dist/fluro.ui.min.js'
             }
         }
     });

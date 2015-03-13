@@ -4,7 +4,7 @@ angular.module('fluro.ui', [
     'fluro.config',
     'youtube-embed',
     'timer',
-    ])
+    ]);
 'use strict';
 
 angular.module('fluro.ui')

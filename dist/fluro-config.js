@@ -65,7 +65,7 @@ angular.module('fluro.ui')
 
 /////////////////////////////////////////////////////
 
-.controller('InlineImageController', function($scope, FluroConfig) {
+.controller('InlineImageController', function($scope, Fluro) {
 
 
     if(!$scope.imageVars) {
@@ -75,7 +75,7 @@ angular.module('fluro.ui')
 
     //////////////////////////////////////////////////////////////
 
-    var urlString = FluroConfig.fluro_url + '/get/' + $scope.id;
+    var urlString = Fluro.apiUrl + '/get/' + $scope.id;
 
     //////////////////////////////////////////////////////////////
 
@@ -243,7 +243,7 @@ angular.module('fluro.ui')
 angular.module('fluro.ui')
 
 
-.directive('fluroVideo', function($compile, FluroConfig) {
+.directive('fluroVideo', function($compile, Fluro) {
 
     return {
         restrict: 'E',
@@ -267,7 +267,7 @@ angular.module('fluro.ui')
                     template = '<div class="video-wrapper"><vimeo-video video-url="model.external.vimeo" player-vars="playerVars"/></div>';
                     break;
                 case 'upload':
-                    $scope.playUrl = FluroConfig.fluro_url + '/get/' + $scope.model._id;
+                    $scope.playUrl = Fluro.apiUrl + '/get/' + $scope.model._id;
                     template = '<div class="video-wrapper"><video controls><source ng-src="{{playUrl | trustfluro}}" type="{{model.mimetype}}"></video></div>';
                     break;
             }

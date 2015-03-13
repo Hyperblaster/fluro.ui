@@ -75,7 +75,7 @@ angular.module('fluro.ui')
 
     //////////////////////////////////////////////////////////////
 
-    var urlString = Fluro.apiUrl + '/get/' + $scope.id;
+    var urlString = Fluro.apiURL + '/get/' + $scope.id;
 
     //////////////////////////////////////////////////////////////
 
@@ -267,7 +267,7 @@ angular.module('fluro.ui')
                     template = '<div class="video-wrapper"><vimeo-video video-url="model.external.vimeo" player-vars="playerVars"/></div>';
                     break;
                 case 'upload':
-                    $scope.playUrl = Fluro.apiUrl + '/get/' + $scope.model._id;
+                    $scope.playUrl = Fluro.apiURL + '/get/' + $scope.model._id;
                     template = '<div class="video-wrapper"><video controls><source ng-src="{{playUrl | trustfluro}}" type="{{model.mimetype}}"></video></div>';
                     break;
             }

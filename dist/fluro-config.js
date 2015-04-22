@@ -206,7 +206,6 @@ angular.module('fluro.ui')
 
     _this.addSlide = function(slide) {
 
-        console.log('ADD SLIDE')
        // slide.$element = element[0];
         $scope.playlist.addItem(slide);
 
@@ -224,7 +223,7 @@ angular.module('fluro.ui')
 
 /////////////////////////////////////////////////////
 
-.directive('slide', function() {
+.directive('fluroSlide', function() {
     return {
         require: '^fluroSlideshow',
         restrict: 'EA',

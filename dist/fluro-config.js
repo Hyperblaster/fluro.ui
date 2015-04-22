@@ -5,6 +5,8 @@ angular.module('fluro.ui', [
     'fluro.util',
     'youtube-embed'
     ]);
+/*
+
 'use strict';
 
 angular.module('fluro.ui')
@@ -27,8 +29,7 @@ angular.module('fluro.ui')
     console.log('COLUMNS', $scope.model, 12/$scope.model.length)
     $scope.columnWidth = Math.round(12 / $scope.model.length)
 })
-
-
+*/
 
 'use strict';
 /*

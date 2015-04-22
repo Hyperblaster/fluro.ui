@@ -205,6 +205,8 @@ angular.module('fluro.ui')
 */
 
     _this.addSlide = function(slide) {
+
+        console.log('ADD SLIDE')
        // slide.$element = element[0];
         $scope.playlist.addItem(slide);
 

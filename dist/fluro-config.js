@@ -92,6 +92,8 @@ angular.module('fluro.ui')
         if ($scope.imageHeight) {
             urlString += '&h=' + $scope.imageHeight;
         }
+    } else {
+        urlString += '?dimensions&w=' + 1200;
     }
 
     //////////////////////////////////////////////////////////////

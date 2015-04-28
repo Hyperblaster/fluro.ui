@@ -52,28 +52,27 @@ angular.module('fluro.ui')
 'use strict';
 
 angular.module('fluro.ui')
-.directive('fluroImage', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        template: '<div class="fluro-image"><img ng-src="{{url}}" spinner-on-load/></div>',
-        controller: 'InlineImageController',
-        scope: {
-            id: '=fluroImage',
-            imageWidth: '=',
-            imageHeight: '=',
-        }
-    };
-})
+    .directive('fluroImage', function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            template: '<div class="fluro-image"><img ng-src="{{url}}" spinner-on-load/></div>',
+            controller: 'InlineImageController',
+            scope: {
+                id: '=fluroImage',
+                imageWidth: '=',
+                imageHeight: '=',
+            }
+        };
+    })
 
 /////////////////////////////////////////////////////
 
 .controller('InlineImageController', function($scope, Fluro) {
 
 
-    if(!$scope.imageVars) {
-        $scope.imageVars = {
-        }
+    if (!$scope.imageVars) {
+        $scope.imageVars = {}
     }
 
     //////////////////////////////////////////////////////////////
@@ -93,7 +92,15 @@ angular.module('fluro.ui')
             urlString += '&h=' + $scope.imageHeight;
         }
     } else {
-        urlString += '?dimensions&w=' + 1200;
+
+        var limit = 1200;
+
+        if (window.screen.width <= 768) {
+            limit = 768;
+        }
+
+        urlString += '?dimensions&w=' + limit;
+
     }
 
     //////////////////////////////////////////////////////////////
@@ -110,23 +117,23 @@ angular.module('fluro.ui')
 
             var preloader = angular.element('<span class="image-preloader"><i class="fa fa-spinner fa-spin"></i></span>');
 
-          element.on('load', function() {
-              element.removeClass('spinner-hide');
-              element.addClass('spinner-show');
+            element.on('load', function() {
+                element.removeClass('spinner-hide');
+                element.addClass('spinner-show');
 
-              preloader.remove();
-          });
-          scope.$watch('ngSrc', function() {
-            // Set visibility: false + inject temporary spinner overlay
-              element.addClass('spinner-hide');
+                preloader.remove();
+            });
 
-             
-              element.parent().append(preloader);
-          });
+            scope.$watch('ngSrc', function() {
+                // Set visibility: false + inject temporary spinner overlay
+                element.addClass('spinner-hide');
+
+
+                element.parent().append(preloader);
+            });
         }
     };
 });
-
 'use strict';
 
 angular.module('fluro.ui')

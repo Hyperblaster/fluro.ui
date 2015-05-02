@@ -62,7 +62,7 @@ angular.module('fluro.ui')
                 id: '=fluroImage',
                 imageWidth: '=',
                 imageHeight: '=',
-                params:'=ngParams',
+                ngParams:'&',
             }
         };
     })
@@ -72,8 +72,13 @@ angular.module('fluro.ui')
 .controller('InlineImageController', function($scope, $window, Fluro) {
 
 
+     $scope.params = $scope.ngParams();
+    if(!$scope.params){
+        $scope.params = {}
+    }
+            
     console.log('Image parameters', $scope.params);
-    
+
     if (!$scope.imageVars) {
         $scope.imageVars = {}
     }

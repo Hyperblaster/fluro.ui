@@ -71,8 +71,9 @@ angular.module('fluro.ui')
 
 .controller('InlineImageController', function($scope, $window, Fluro) {
 
-    
 
+    console.log('Image parameters', $scope.params);
+    
     if (!$scope.imageVars) {
         $scope.imageVars = {}
     }

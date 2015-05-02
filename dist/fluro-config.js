@@ -62,14 +62,16 @@ angular.module('fluro.ui')
                 id: '=fluroImage',
                 imageWidth: '=',
                 imageHeight: '=',
+                params:'=ngParams',
             }
         };
     })
 
 /////////////////////////////////////////////////////
 
-.controller('InlineImageController', function($scope, Fluro) {
+.controller('InlineImageController', function($scope, $window, Fluro) {
 
+    
 
     if (!$scope.imageVars) {
         $scope.imageVars = {}
@@ -95,7 +97,7 @@ angular.module('fluro.ui')
 
         var limit = 1200;
 
-        if (window.screen.width <= 768) {
+        if ($window.screen.width <= 768) {
             limit = 768;
         }
 

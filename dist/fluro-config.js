@@ -114,7 +114,7 @@ angular.module('fluro.ui')
     }
 
 
-    console.log('URL String', urlString)
+    //console.log('URL String', urlString)
 
     //////////////////////////////////////////////////////////////
 
@@ -278,8 +278,25 @@ angular.module('fluro.ui')
         controller: 'FluroVideoController',
         scope: {
             model: '=ngModel',
+            ngParams: '&',
         },
         link: function($scope, $element, $attrs) {
+
+            $scope.params = $scope.ngParams();
+
+            if (!$scope.params) {
+                $scope.params = {
+                    controls: 0,
+                    autoplay: 0,
+                    modestbranding: 1,
+                    playsinline: 1,
+                    showinfo: 0,
+                    theme: 'light',
+                    byline: 0,
+                    portrait: 0,
+                    title: 0
+                }
+            }
 
             ///////////////////////////
 
@@ -287,10 +304,10 @@ angular.module('fluro.ui')
 
             switch ($scope.model.assetType) {
                 case 'youtube':
-                    template = '<div class="video-wrapper"><youtube-video video-url="model.external.youtube" player-vars="playerVars"/></div>';
+                    template = '<div class="video-wrapper"><youtube-video video-url="model.external.youtube" player-vars="params"/></div>';
                     break;
                 case 'vimeo':
-                    template = '<div class="video-wrapper"><vimeo-video video-url="model.external.vimeo" player-vars="playerVars"/></div>';
+                    template = '<div class="video-wrapper"><vimeo-video video-url="model.external.vimeo" player-vars="params"/></div>';
                     break;
                 case 'upload':
                     $scope.playUrl = Fluro.apiURL + '/get/' + $scope.model._id;
@@ -322,19 +339,7 @@ angular.module('fluro.ui')
 
 .controller('FluroVideoController', function($scope) {
 
-    if (!$scope.playerVars) {
-        $scope.playerVars = {
-            controls: 0,
-            autoplay: 0,
-            modestbranding: 1,
-            playsinline: 1,
-            showinfo: 0,
-            theme: 'light',
-            byline: 0,
-            portrait: 0,
-            title: 0
-        }
-    }
+
 
     //console.log('Inline video', $scope.model)
     // var urlString = $fluro_url + '/get/' + $scope.id;

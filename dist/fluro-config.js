@@ -113,6 +113,9 @@ angular.module('fluro.ui')
 
     }
 
+
+    console.log('URL String', urlString)
+
     //////////////////////////////////////////////////////////////
 
     $scope.url = urlString;

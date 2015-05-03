@@ -79,6 +79,8 @@ angular.module('fluro.ui')
 
     $scope.styles ={}
 
+
+
     if($scope.params.width) {
         $scope.styles['width'] = $scope.params.width;
     }
@@ -104,6 +106,8 @@ angular.module('fluro.ui')
     if($scope.imageHeight) {
         $scope.params.imageHeight = $scope.imageHeight;
     }
+
+     console.log('STYLES', $scope);
 
     //////////////////////////////////////////////////////////////
 

@@ -107,7 +107,6 @@ angular.module('fluro.ui')
         $scope.params.imageHeight = $scope.imageHeight;
     }
 
-     console.log('STYLES', $scope);
 
     //////////////////////////////////////////////////////////////
 

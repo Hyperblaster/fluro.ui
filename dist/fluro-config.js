@@ -197,13 +197,13 @@ angular.module('fluro.ui')
     var _this = this;
 
 
-        //Setup a playlist
-        $scope.playlist = new Playlist();
+    //Setup a playlist
+    $scope.playlist = new Playlist();
 
     //Link functionality
     $scope.next = $scope.playlist.next;
     $scope.previous = $scope.playlist.previous;
-    
+
     $scope.select = $scope.playlist.select;
 
 
@@ -222,18 +222,16 @@ angular.module('fluro.ui')
 
             if (newSlide) {
                 newSlide.active = true;
-
-
-
-
                 /**
                 var h = newSlide.$element.height();
                 $scope.styles.height = h + 'px';
                 /**/
-               
+
             }
         }
     })
+
+    console.log('PLAYLISt', $scope.playlist.currentItem);
 
     /*
         $scope.play = function() {
@@ -252,11 +250,11 @@ angular.module('fluro.ui')
 
     _this.addSlide = function(slide) {
 
-       // slide.$element = element[0];
+        // slide.$element = element[0];
         $scope.playlist.addItem(slide);
 
-        if(slide == $scope.playlist.currentItem) {
-        	slide.active = true;
+        if (slide == $scope.playlist.currentItem) {
+            slide.active = true;
         }
 
     };
@@ -321,20 +319,22 @@ angular.module('fluro.ui')
                 }
             }
 
+
+
             ///////////////////////////
 
             var template;
 
             switch ($scope.model.assetType) {
                 case 'youtube':
-                    template = '<div class="video-wrapper"><youtube-video video-url="model.external.youtube" player-vars="params"/></div>';
+                    template = '<div class="embed-responsive embed-responsive-16by9"><youtube-video class="embed-responsive-item" video-url="model.external.youtube" player-vars="params"/></div>';
                     break;
                 case 'vimeo':
-                    template = '<div class="video-wrapper"><vimeo-video video-url="model.external.vimeo" player-vars="params"/></div>';
+                    template = '<div class="embed-responsive embed-responsive-16by9"><vimeo-video class="embed-responsive-item" video-url="model.external.vimeo" player-vars="params"/></div>';
                     break;
                 case 'upload':
                     $scope.playUrl = Fluro.apiURL + '/get/' + $scope.model._id;
-                    template = '<div class="video-wrapper"><video controls><source ng-src="{{playUrl | trustfluro}}" type="{{model.mimetype}}"></video></div>';
+                    template = '<div class="embed-responsive embed-responsive-16by9"><video class="embed-responsive-item" controls><source ng-src="{{playUrl | trustfluro}}" type="{{model.mimetype}}"></video></div>';
                     break;
             }
 

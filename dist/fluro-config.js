@@ -31,8 +31,10 @@ angular.module('fluro.ui')
 })
 */
 
-'use strict';
+
 /*
+'use strict';
+
 
 angular.module('fluro.ui')
     .directive('countdownClock', function() {

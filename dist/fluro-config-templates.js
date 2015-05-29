@@ -17,7 +17,7 @@ angular.module('fluro.ui').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('fluro/ui/slide.html',
-    "<div class=\"slide view-slide-in animated\" ng-show=active ng-transclude></div>"
+    "<div class=\"slide view-slide-in animated\" ng-class={active:active} ng-transclude></div>"
   );
 
 

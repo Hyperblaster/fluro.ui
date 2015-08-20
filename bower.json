@@ -21,6 +21,6 @@
   "dependencies": {
     "angular": "~1.3.14",
     "fluro.config": "*",
-    "fluro.util": "*",
+    "fluro.util": "*"
   }
 }

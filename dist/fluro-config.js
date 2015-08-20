@@ -285,7 +285,7 @@ angular.module('fluro.ui')
         }
     };
 })
-'use strict';
+/*'use strict';
 
 
 
@@ -371,6 +371,8 @@ angular.module('fluro.ui')
 
     //$scope.url = urlString;
 });
+
+*/
 'use strict';
 
 angular.module('fluro.ui')

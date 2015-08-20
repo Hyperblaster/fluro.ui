@@ -3,7 +3,6 @@
 angular.module('fluro.ui', [
     'fluro.config',
     'fluro.util',
-    'youtube-embed'
     ]);
 /*
 
